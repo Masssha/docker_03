@@ -1,11 +1,11 @@
-FROM ubuntu:18.04
+FROM python:3.9
 LABEL authors="massh"
 
 COPY . .
 ENV ADMIN="massha"
-#RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 EXPOSE 5050
-ENTRYPOINT ["top", "-b"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 
 
